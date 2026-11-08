@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Christina White's e-portfolio: education, instructional design, web development, and digital media projects.">
+  <meta name="theme-color" content="#A5C9CA">
+  <title>Christina White | E-Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" hidden>Menu <span aria-hidden="true">☰</span></button>
+        <ul class="nav-list" id="navigation-links">
+          <li><a class="nav-link" href="#about" data-section="about">About Me</a></li>
+          <li>
+            <details class="nav-dropdown" data-section="image-editing">
+              <summary>Image Editing <span class="chevron" aria-hidden="true"></span></summary>
+              <ul class="dropdown-list">
+                <li><a href="#image-editing" data-project="svgLogo">SVG Logo</a></li>
+                <li><a href="#image-editing" data-project="inkscapeBookcover">Inkscape Created Bookcover</a></li>
+                <li><a href="#image-editing" data-project="aiBookcover">AI Created Bookcover</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav-link" href="#web-design-1" data-section="web-design-1">Web Design #1</a></li>
+          <li>
+            <details class="nav-dropdown" data-section="web-design-2">
+              <summary>Web Design #2 <span class="chevron" aria-hidden="true"></span></summary>
+              <ul class="dropdown-list">
+                <li><a href="#web-design-2" data-project="customDragDrop">Customized Drag-and-Drop</a></li>
+                <li><a href="#web-design-2" data-project="aiDragDrop">AI Drag-and-Drop</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav-dropdown" data-section="video-production">
+              <summary>Video Production <span class="chevron" aria-hidden="true"></span></summary>
+              <ul class="dropdown-list">
+                <li><a href="#video-production" data-project="traditionalVideo">Traditional Video</a></li>
+                <li><a href="#video-production" data-project="aiVideo">AI Video</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav-link" href="#animation" data-section="animation">Digital Animation</a></li>
+          <li><a class="nav-link" href="#screencasting" data-section="screencasting">Screencast</a></li>
+          <li><a class="nav-link" href="#e-portfolio" data-section="e-portfolio">E-Portfolio</a></li>
+          <li><a class="nav-link" href="#contact" data-section="contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="introduction">
+      <h1>Christina White</h1>
+      <p>Educator and Aspiring Instructional Designer</p>
+    </div>
+
+    <main class="portfolio-grid" id="main-content">
+      <!-- Row 1: About Me spans all three columns. -->
+      <section class="card full-width about-card" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">ABOUT ME</h2>
+        <p>I’m an educator, coach, and lifelong learner with 17+ years of experience designing learning that helps people grow. Across roles in instruction, curriculum development, and professional development, I’ve built my practice on three principles: understand what learners need, make complex ideas accessible, and give people real opportunities to apply new skills.</p>
+        <p>I’m currently completing a master’s degree in Curriculum and Instruction with a concentration in Educational Technology, and I’m bringing that foundation into corporate instructional design. I’m drawn to creating engaging, practical learning experiences that help professionals build skills and perform with confidence. My work blends an educator’s depth, a coach’s collaborative mindset, and a steady commitment to improvement.</p>
+        <p>This portfolio shows how I connect purposeful design, technology, and learner needs to create learning that works.</p>
+      </section>
+
+      <!-- Row 2: Three project cards. Add project URLs in script.js. -->
+      <section class="card project-card" id="image-editing" aria-labelledby="image-heading">
+        <h2 id="image-heading">IMAGE EDITING</h2>
+        <p>I created a vector-based logo and two digital book covers using traditional design software and generative AI. This project explored foundational design principles and compared different approaches to creating digital visuals.</p>
+        <div class="button-group">
+          <a class="button" href="#image-editing" data-project="svgLogo">SVG Logo</a>
+          <a class="button" href="#image-editing" data-project="inkscapeBookcover">Inkscape Created Bookcover</a>
+          <a class="button" href="#image-editing" data-project="aiBookcover">AI Created Bookcover</a>
+        </div>
+      </section>
+      <section class="card project-card" id="web-design-1" aria-labelledby="web-1-heading">
+        <h2 id="web-1-heading">WEB DESIGN #1</h2>
+        <p>I customized an interactive quiz by modifying HTML and JavaScript, adding original questions with tailored feedback, and improving its layout. I published the quiz online, strengthening my foundational web programming skills.</p>
+        <div class="button-group">
+          <a class="button" href="#web-design-1" data-project="interactiveQuiz">Interactive Quiz</a>
+        </div>
+      </section>
+      <section class="card project-card" id="web-design-2" aria-labelledby="web-2-heading">
+        <h2 id="web-2-heading">WEB DESIGN #2</h2>
+        <p>I developed an interactive drag-and-drop assessment by customizing existing HTML, CSS, and JavaScript files. I then used generative AI to create a comparable activity and compare the two development approaches.</p>
+        <div class="button-group">
+          <a class="button" href="#web-design-2" data-project="customDragDrop">Customized Drag-and-Drop</a>
+          <a class="button" href="#web-design-2" data-project="aiDragDrop">AI Drag-and-Drop</a>
+        </div>
+      </section>
+
+      <!-- Row 3: Three more project cards. -->
+      <section class="card project-card" id="video-production" aria-labelledby="video-heading">
+        <h2 id="video-heading">VIDEO PRODUCTION</h2>
+        <p>I produced an educational video using traditional editing software and generative AI tools. I transformed still images into a multimedia presentation with camera movements, transitions, voiceovers, and background music.</p>
+        <div class="button-group">
+          <a class="button" href="#video-production" data-project="traditionalVideo">Traditional Video</a>
+          <a class="button" href="#video-production" data-project="aiVideo">AI Video</a>
+        </div>
+      </section>
+      <section class="card project-card" id="animation" aria-labelledby="animation-heading">
+        <h2 id="animation-heading">DIGITAL ANIMATION</h2>
+        <p>I created a digital animation to communicate a concept through movement and visual storytelling. This project strengthened my skills in designing engaging multimedia content that supports learner understanding.</p>
+        <div class="button-group">
+          <a class="button" href="#animation" data-project="animation">Animation</a>
+        </div>
+      </section>
+      <section class="card project-card" id="screencasting" aria-labelledby="screencast-heading">
+        <h2 id="screencast-heading">SCREENCASTING</h2>
+        <p>I created an instructional screencast using screen recordings and narration to guide learners through a process step by step. This project strengthened my ability to develop clear demonstrations that learners can revisit and follow independently.</p>
+        <div class="button-group">
+          <a class="button" href="#screencasting" data-project="screencast">Screencast</a>
+        </div>
+      </section>
+
+      <!-- Row 4: The portfolio statement spans all three columns. -->
+      <section class="card full-width portfolio-card" id="e-portfolio" aria-labelledby="portfolio-heading">
+        <h2 id="portfolio-heading">E-PORTFOLIO</h2>
+        <p>My e-portfolio connects my experience as an educator and instructional coach with my growing expertise in instructional design and educational technology. Through visual design, interactive quizzes and assessments, website development, and educational video production, I explore how digital tools can make learning engaging, accessible, and practical. These projects showcase my work with HTML, CSS, JavaScript, multimedia tools, and generative AI while reflecting my commitment to clear communication and purposeful design. As I complete my master’s degree and pursue a career in corporate instructional design, this portfolio demonstrates my growth in creating learning experiences that help people build skills, apply their knowledge, and perform with confidence.</p>
+      </section>
+
+      <!-- Row 5: Half-width, half-height contact card on larger screens. -->
+      <section class="card contact-card" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">CONTACT ME</h2>
+        <address>
+          <p><strong>Email:</strong> <a href="mailto:tchr365@gmail.com">tchr365@gmail.com</a></p>
+          <p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/tchr365" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/tchr365</a></p>
+        </address>
+      </section>
+    </main>
+
+    <div class="back-to-top"><a class="button" href="#top">Back to Top <span aria-hidden="true">↑</span></a></div>
+    <footer class="site-footer"><p>Christina White | EME 6208 | University of Florida</p></footer>
+  </div>
+
+  <!-- Used only until an actual project link has been added in script.js. -->
+  <dialog class="project-dialog" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-message">
+    <h2 id="project-dialog-title">Project</h2>
+    <p id="project-dialog-message">This project will be available soon.</p>
+    <form method="dialog"><button class="button" autofocus>Close</button></form>
+  </dialog>
+</body>
+</html>

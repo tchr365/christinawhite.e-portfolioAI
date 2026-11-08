@@ -1,0 +1,157 @@
+/* Change these variables to adjust the whole portfolio. */
+:root {
+  --teal: #A5C9CA;
+  --beige: #F2E9E4;
+  --charcoal: #2E2E2E;
+  --blue-gray: #2E4052;
+  --white: #FFFFFF;
+  --gap: 24px;
+  --page-gutter: 64px;
+  --card-radius: 15px;
+  --portfolio-height: 360px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--charcoal);
+  font: 400 16px/1.8 "Poppins", Arial, sans-serif;
+}
+button, summary { font: inherit; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+a { color: var(--blue-gray); }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--blue-gray); outline-offset: 4px; }
+h1, h2, p { margin: 0; }
+h1, h2 { color: var(--blue-gray); }
+h2 { font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* The outer shell lets the navigation and footer bars fill the page. */
+.page-shell { width: 100%; background: var(--beige); }
+/* Keep the inner content centered at its existing width. */
+.navigation, .introduction, .portfolio-grid, .back-to-top {
+  width: min(1320px, calc(100% - var(--page-gutter)));
+  margin-inline: auto;
+}
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 8px 16px; background: white; transform: translateY(-150%); }
+.skip-link:focus { transform: translateY(0); }
+
+/* White navigation labels on teal; highlighted labels use blue-gray. */
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--teal); }
+.navigation { padding: 12px 16px; }
+.nav-list, .dropdown-list { list-style: none; margin: 0; padding: 0; }
+.nav-list { display: flex; align-items: center; justify-content: center; gap: 2px; }
+.nav-list > li { position: relative; }
+.nav-link, .nav-dropdown > summary {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 10px 9px; border-radius: 8px;
+  color: var(--white); font-size: 12px; font-weight: 500;
+  line-height: 1.5; text-decoration: none; white-space: nowrap;
+  transition: background-color 160ms ease;
+}
+.nav-dropdown > summary { cursor: pointer; list-style: none; }
+.nav-dropdown > summary::-webkit-details-marker { display: none; }
+.nav-link:hover, .nav-link:focus-visible, .nav-link.is-active,
+.nav-dropdown > summary:hover, .nav-dropdown > summary:focus-visible,
+.nav-dropdown.is-active > summary, .nav-dropdown[open] > summary { background: var(--blue-gray); color: var(--white); }
+.chevron { width: 6px; height: 6px; border-right: 1.5px solid; border-bottom: 1.5px solid; transform: translateY(-2px) rotate(45deg); }
+.nav-dropdown[open] .chevron { transform: translateY(1px) rotate(225deg); }
+.dropdown-list {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 260px; padding: 7px; border-radius: 10px;
+  background: var(--blue-gray); box-shadow: 0 8px 22px #2E405226;
+}
+.dropdown-list a { display: block; padding: 10px 12px; border-radius: 6px; color: var(--white); font-size: 13px; line-height: 1.6; text-decoration: none; }
+.dropdown-list a:hover, .dropdown-list a:focus-visible { background: #ffffff1f; outline-color: white; }
+.menu-toggle { display: none; padding: 8px 16px; margin-left: auto; border: 0; border-radius: 8px; color: var(--white); background: var(--blue-gray); }
+.menu-toggle span { margin-left: 10px; }
+
+/* Name and subtitle, directly below the navigation. */
+.introduction { padding: 49px 24px 52px; text-align: center; }
+.introduction h1 { font-family: "Lora", Georgia, serif; font-size: 80px; font-weight: 700; line-height: 1.2; }
+.introduction p { margin-top: 14px; color: var(--blue-gray); font-size: clamp(15px, 1.7vw, 20px); }
+
+/* The same gap controls spacing horizontally and vertically. */
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); padding: 0 36px; }
+.card {
+  min-width: 0; padding: 30px 26px; border: 3px solid var(--teal);
+  border-radius: var(--card-radius); background: var(--white); text-align: center;
+  scroll-margin-top: 92px;
+}
+.card h2 { margin-bottom: 18px; }
+.card p + p { margin-top: 16px; }
+.full-width { grid-column: 1 / -1; padding: 34px 48px; }
+.project-card { display: flex; flex-direction: column; font-size: 15px; }
+.project-card h2 { font-size: 20px; }
+.project-card > p { margin-bottom: 26px; }
+.button-group { display: flex; flex-direction: column; align-items: stretch; gap: 10px; margin-top: auto; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 11px 16px; border: 2px solid var(--blue-gray); border-radius: 9px;
+  background: var(--blue-gray); color: var(--white);
+  font-family: "Poppins", Arial, sans-serif; font-size: 13px; font-weight: 500;
+  line-height: 1.5; text-align: center; text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px #2E405226; }
+.portfolio-card { min-height: var(--portfolio-height); display: flex; flex-direction: column; justify-content: center; }
+.contact-card {
+  grid-column: 1 / -1; justify-self: center; width: 50%;
+  min-height: calc(var(--portfolio-height) / 2); padding: 22px 20px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.contact-card h2 { margin-bottom: 12px; }
+.contact-card address { font-style: normal; font-size: 14px; }
+.contact-card address p + p { margin-top: 3px; }
+.contact-card a { overflow-wrap: anywhere; text-underline-offset: 3px; }
+.contact-card a:hover { text-decoration-thickness: 2px; }
+.back-to-top { padding: var(--gap) 20px 32px; text-align: center; }
+.back-to-top .button { padding-inline: 24px; }
+
+/* The final requested footer treatment: white Poppins text. */
+.site-footer { padding: 24px; background: var(--blue-gray); color: var(--white); font-size: 13px; text-align: center; }
+.site-footer a { color: var(--white); }
+.project-dialog { width: min(440px, calc(100% - 32px)); padding: 32px; border: 3px solid var(--teal); border-radius: 15px; color: var(--charcoal); text-align: center; }
+.project-dialog::backdrop { background: #2E405299; }
+.project-dialog h2 { margin-bottom: 16px; font-size: 20px; }
+.project-dialog form { margin-top: 24px; }
+
+/* Menus remain available if JavaScript is disabled. */
+@media (max-width: 1150px) {
+  .site-header { position: relative; }
+  .navigation { padding: 12px; }
+  .menu-toggle { display: block; }
+  .nav-list { flex-direction: column; align-items: stretch; gap: 4px; }
+  .js .nav-list { display: none; }
+  .js .nav-list.is-open { display: flex; margin-top: 12px; }
+  .nav-link, .nav-dropdown > summary { justify-content: space-between; padding: 12px 16px; font-size: 14px; }
+  .dropdown-list { position: static; min-width: 0; margin-top: 4px; box-shadow: none; }
+  .card { scroll-margin-top: 20px; }
+}
+@media (max-width: 900px) {
+  :root { --page-gutter: 32px; }
+  .portfolio-grid { grid-template-columns: 1fr; padding-inline: 22px; }
+  .card, .full-width { padding: 28px 24px; }
+  .portfolio-card { min-height: 0; }
+  .contact-card { width: 100%; min-height: 0; }
+  .button-group { width: min(100%, 360px); align-self: center; }
+}
+@media (max-width: 480px) {
+  :root { --page-gutter: 20px; }
+  .introduction { padding: 32px 16px 36px; }
+  .introduction h1 { font-size: 48px; }
+  .portfolio-grid { padding-inline: 12px; }
+  .card, .full-width { padding: 25px 18px; }
+  body { font-size: 15px; }
+  h2, .project-card h2 { font-size: 19px; }
+  .contact-card address { font-size: 13px; }
+  .site-footer { font-size: 12px; padding: 22px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button, .nav-link, .nav-dropdown > summary { transition: none; }
+  .button:hover { transform: none; }
+}
